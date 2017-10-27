@@ -12,32 +12,41 @@ using namespace std;
 //Functions
 void pause() {
 	cout << "Press Any Key to Continue . . .";
-	while (!_kbhit());
+	while (!_kbhit());   // generate a random 3 digit number... ex: 124
 	_getch();
 	cout << '\n';
 }
-
+// MAIN
+// Defining and Assigning Variable
 void main() {
-	int x;
-	int a;
-	int b;
-	int c;
+	for (int i = 0; i < 30; i++)
+	{
 
-	cout << "Enter a 3 Digit Number . . ." << endl;
-	cin >> x;
-	c = x % 10;
-	b = x / 10 % 10;
-	a = x / 100;
+	int someThreeDigitNumber;												// Defining Variables
+cout << "Enter a 3 Digit Number : ";
+cin >> someThreeDigitNumber;
+int a;
+int b;
+int c;
 
-	if (a > b && b > c) {
-		cout << "Descending" << endl;
+	a = someThreeDigitNumber / 100;
+
+	b = (someThreeDigitNumber) / 10 % 10; // makes variable names more accurate
+
+	c = someThreeDigitNumber % 10;
+
+
+	if (a < b && b < c) { // check to see if Ascending
+		cout << someThreeDigitNumber << " is Ascending" << endl;
 	}
-	else if (a < b && b < c) {
-		cout << "Ascending" << endl;
+	else if (a > b && b > c) { // check to see if Descending
+		cout << someThreeDigitNumber << " is Descending" << endl;
 	}
-	else {
-		cout << "Neither" << endl;
+	else  { // check to see if neither
+		cout << someThreeDigitNumber << " is Neither Ascending nor Descending" << endl;
 	}
-	pause();
+}
+
+	pause(); // pauses to see the displayed text
 }
 
